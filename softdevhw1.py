@@ -11,12 +11,13 @@ def importation(filename):
     return content
 
 def split(L):
+    dict={}
     del L[0]
     del L[len(L)-1]
     for row in L:
         row=row.strip('\n').rsplit(',',1)
         dict[row[0]]=(float)(row[1])
-
+    return dict
 def randomOcc(d):
     rand = random.uniform(0,100)
     for key in d.keys():
@@ -55,12 +56,13 @@ def doAlot():
     print c
     print d
     print "end"
-data=importation("occupations.csv")
-dict = {}
-split(data)
-print "Keys:"
-print(dict.keys())
-print "Values:"
-print(dict.values())
-print "Random:"
-print(randomOcc(dict))
+
+if __name__=='__main__':
+    data=importation("occupations.csv")
+    d = split(data)
+    print "Keys:"
+    print(d.keys())
+    print "Values:"
+    print(d.values())
+    print "Random:"
+    print(randomOcc(d))
