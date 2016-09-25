@@ -9,7 +9,7 @@ def hello():
 @app.route("/occupations/")
 def help():
     d = softdevhw1.split(softdevhw1.importation("occupations.csv"))
-    return render_template("02_flask-w-tmplt.html",collection=d)
+    return render_template("02_flask-w-tmplt.html",collection=d,randomjob=softdevhw1.randomOcc(d))
 
 if __name__=='__main__':
     app.debug=True
