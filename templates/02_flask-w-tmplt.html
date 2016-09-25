@@ -4,12 +4,24 @@
   <head>
     <title> Occupations </title>
   </head>
-
-  <body>
-    {% for item in collection %}
-    {{ collection }}
+  </H1>
+     Occupations and their respective percentages of the job market:
      <br>
-    {% endfor %}
-  </body>
+  </H1>
+  <body>
+    <table border =1 width =600>
+	<thead>
+	  <tr>
+	    <th> Occupation </th>
+	    <th> Percentage </th>
+	</tr></thead><tbody>
+      {% for item in collection %}
+      <tr>
+	<td>{{ item }}</td>
+	<td>{{collection[item]}}</td>
+      </tr>
+      {% endfor %}
+	</tbody>
+  </body></table>
 
 </html>
